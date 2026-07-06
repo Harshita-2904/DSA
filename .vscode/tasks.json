@@ -1,0 +1,32 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run C++",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "cd \"${fileDirname}\" && g++ \"${fileBasename}\" -o \"${fileBasenameNoExtension}.exe\" && ./${fileBasenameNoExtension}.exe < \"${workspaceFolder}/input.txt\" > \"${workspaceFolder}/output.txt\" && rm -f \"${fileBasenameNoExtension}.exe\""
+      ],
+      "options": {
+        "env": {
+          "MSYSTEM": "MINGW64"
+        }
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": false,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+        "clear": true,
+        "close": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}
